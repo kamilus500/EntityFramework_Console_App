@@ -1,0 +1,12 @@
+C:\Users\LanowY\Desktop\c#\Console_EF_application\bin\Debug\Console_EF_application.exe.config
+C:\Users\LanowY\Desktop\c#\Console_EF_application\bin\Debug\Console_EF_application.exe
+C:\Users\LanowY\Desktop\c#\Console_EF_application\bin\Debug\Console_EF_application.pdb
+C:\Users\LanowY\Desktop\c#\Console_EF_application\bin\Debug\EntityFramework.dll
+C:\Users\LanowY\Desktop\c#\Console_EF_application\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\LanowY\Desktop\c#\Console_EF_application\bin\Debug\EntityFramework.xml
+C:\Users\LanowY\Desktop\c#\Console_EF_application\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\LanowY\Desktop\c#\Console_EF_application\obj\Debug\Console_EF_application.csprojAssemblyReference.cache
+C:\Users\LanowY\Desktop\c#\Console_EF_application\obj\Debug\Console_EF_application.csproj.CoreCompileInputs.cache
+C:\Users\LanowY\Desktop\c#\Console_EF_application\obj\Debug\Console_EF_application.csproj.CopyComplete
+C:\Users\LanowY\Desktop\c#\Console_EF_application\obj\Debug\Console_EF_application.exe
+C:\Users\LanowY\Desktop\c#\Console_EF_application\obj\Debug\Console_EF_application.pdb
