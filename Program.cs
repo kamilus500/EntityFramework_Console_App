@@ -9,6 +9,8 @@ namespace Console_EF_application
 {
     class Program
     {
+
+        #region Main
         static void Main()
         {
             Console.Clear();
@@ -21,6 +23,8 @@ namespace Console_EF_application
             Console.WriteLine("Wybierz działanie programu");
             Console.WriteLine("1) Wyświel wszystkie kontakty");
             Console.WriteLine("2) Dodanie nowego kontaktu");
+            Console.WriteLine("3) Usunięcię wybranego kontaktu");
+            Console.WriteLine("4) Modifykowanie wybranego kontaktu");
 
             int action = Convert.ToInt32(Console.ReadLine());
 
@@ -29,13 +33,28 @@ namespace Console_EF_application
                 case 1:
                     GetAllData();
                     break;
+
                 case 2:
                     int id = GetLastID();
                     AddNewKontakt(id);
                     break;
+
+                case 3:
+                    RemoveKontakt(GetLastID());
+                    break;
+                case 4:
+                    Console.Write("Podaj imie do zmiany: ");
+                    string imie = Console.ReadLine();
+                    Console.Write("Podaj osobe(id) do zmiany: ");
+                    int id2 = Convert.ToInt32(Console.ReadLine());
+                    
+                    UpdateKontakt(id2,imie);
+                    break;
             }
         }
+        #endregion
 
+        #region Functions
         public static void GetAllData()
         {
             KontaktyEntities db = new KontaktyEntities();
@@ -46,7 +65,6 @@ namespace Console_EF_application
                 Console.WriteLine(" ID: {0} \n Imie: {1} \n Nazwisko: {2} \n",osoba.ID,osoba.Imie,osoba.Nazwisko);
             }
 
-            Console.ReadKey();
             Main();
         }
 
@@ -62,11 +80,31 @@ namespace Console_EF_application
             db.Table.Add(result);
             db.SaveChanges();
 
-            Console.ReadKey();
+            Main();
+        }
+
+        public static void RemoveKontakt(int _id)
+        {
+            KontaktyEntities db = new KontaktyEntities();
+            Table osoba = db.Table.Single(x => x.ID == _id);
+            db.Table.Remove(osoba);
+            db.SaveChanges();
 
             Main();
         }
 
+        public static void UpdateKontakt(int _id,string _imie)
+        {
+            KontaktyEntities db = new KontaktyEntities();
+            Table table = db.Table.Single(x => x.ID == _id);
+            table.Imie = _imie;
+            db.SaveChanges();
+
+            Main();
+        }
+        #endregion
+
+        #region Helpers
         public static int GetLastID()
         {
             KontaktyEntities db = new KontaktyEntities();
@@ -74,5 +112,6 @@ namespace Console_EF_application
 
             return ilosc;
         }
+        #endregion
     }
 }
