@@ -20,29 +20,29 @@ namespace Console_EF_application
             Console.WriteLine("###############################");
 
             Console.WriteLine();
+            Console.WriteLine("Lista");
+
+            GetAllData();
+
+            Console.WriteLine();
             Console.WriteLine("Wybierz działanie programu");
-            Console.WriteLine("1) Wyświel wszystkie kontakty");
-            Console.WriteLine("2) Dodanie nowego kontaktu");
-            Console.WriteLine("3) Usunięcię wybranego kontaktu");
-            Console.WriteLine("4) Modifykowanie wybranego kontaktu");
+            Console.WriteLine("1) Dodanie nowego kontaktu");
+            Console.WriteLine("2) Usunięcię wybranego kontaktu");
+            Console.WriteLine("3) Modifykowanie wybranego kontaktu");
 
             int action = Convert.ToInt32(Console.ReadLine());
 
             switch(action)
             {
                 case 1:
-                    GetAllData();
-                    break;
-
-                case 2:
                     int id = GetLastID();
                     AddNewKontakt(id);
                     break;
 
-                case 3:
+                case 2:
                     RemoveKontakt(GetLastID());
                     break;
-                case 4:
+                case 3:
                     Console.Write("Podaj imie do zmiany: ");
                     string imie = Console.ReadLine();
                     Console.Write("Podaj osobe(id) do zmiany: ");
@@ -62,10 +62,8 @@ namespace Console_EF_application
 
             foreach (var osoba in lista)
             {
-                Console.WriteLine(" ID: {0} \n Imie: {1} \n Nazwisko: {2} \n",osoba.ID,osoba.Imie,osoba.Nazwisko);
+                Console.WriteLine("ID: {0} Imie: {1} Nazwisko: {2}",osoba.ID,osoba.Imie,osoba.Nazwisko);
             }
-
-            Main();
         }
 
         public static void AddNewKontakt(int _id)
